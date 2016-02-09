@@ -1,0 +1,12 @@
+<%= link_to "Add a new task", new_task_path, method: "get" %>
+<% @tasks.each do |task| %>
+  <h2><%= task.name %></h2>
+  <ul>
+    <li><%= task.description %></li>
+    <li><%= task.priority %> </li>
+    <li><%= task.done %></li>
+  </ul>
+  <%= link_to "See this task", task_path(task), method: "get" %>
+  <%= link_to "Update this task", edit_task_path(task), method: "get" %>
+  <%= link_to "Delete this task", task_path(task), method: "delete" %>
+<% end %>
